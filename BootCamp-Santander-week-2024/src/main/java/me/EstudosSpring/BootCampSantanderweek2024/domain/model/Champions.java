@@ -1,4 +1,4 @@
-package me.EstudosSpring.domain.model;
+package me.EstudosSpring.BootCampSantanderweek2024.domain.model;
 
 public record Champions(
     Long id,
