@@ -1,4 +1,4 @@
-package me.EstudosSpring.BootCampSantanderweek2024.adapters;
+package me.EstudosSpring.BootCampSantanderweek2024.adapters.out;
 
 import java.util.List;
 import java.util.Optional;
