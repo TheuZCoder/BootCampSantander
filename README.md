@@ -19,31 +19,6 @@ Para isso, utilizamos algumas das mais recentes Inteligências Artificiais (IAs)
 > - [Opcional] Conta na AWS (caso queira publicar a sua API REST na Nuvem usando o [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk);
 > - [Opcional] Conta na OpenAI e/ou Google para integração com os modelos [GPT](https://platform.openai.com/docs/api-reference/chat/create) e/ou [Gemini](https://ai.google.dev/tutorials/rest_quickstart#text-only_input) respectivamente.
 
-### Agenda das Lives
-
-- 25/03 às 19h | **Iniciando o seu Primeiro Projeto Java do Zero:** 
-Fundamentos da linguagem de programação Java e configurações de projetos Spring Boot. Foco em Programação Orientada a Objetos e sua relação com Bancos de Dados SQL através do Spring Data JDBC.
-
-- 26/03 às 19h | **Criando uma API com os Campeões do League of Legends:** 
-Criação de uma API REST, abordando design, desenvolvimento e documentação, com foco em campeões do League of Legends. Publicação da API no AWS Elastic Beanstalk.
-
-- 27/03 às 19h | **Potencializando sua API com Inteligência Artificial (IA):** 
-Incorporação de IA para otimizar a API, utilizando o Spring Cloud OpenFeign para integração com APIs de IA de grandes provedores, como OpenAI (GPT) e Google (Gemini).
-
-- 28/03 às 19h | **Conversando com os Campeões do LoL com HTML, CSS e JavaScript:** 
-Construção da interface do usuário, interatividade e integração com a API explorando os fundamentos de HTML, CSS e JavaScript.
-
-Mais detalhes disponíveis na [Landing Page Oficial da DIO com a Agenda das Lives da Santander Dev Week 2024](https://pages.dio.me/santander-dev-week-2024).
- 
-## Como Participar dos Bootcamps Santander 2024
-
-> [!IMPORTANT] 
-> Ainda não garantiu a sua vaga? **Inscreva-se até 08/04/2024 nos [Bootcamps Santander 2024](https://bit.ly/48S4DCy)** para uma experiência educacional completa, explorando em detalhes os temas praticados durante a imersão da Santander Dev Week 2024. Nesse sentido, as opções de Bootcamps Santander disponíveis para matrícula na plataforma da DIO são:
-> 
-> 1. [Backend com Java e Spring Boot](https://web.dio.me/track/santander-2024-backend-com-java)
-> 2. [Certificação AWS Cloud Practitioner (CLF-C02)](https://web.dio.me/track/santander-2024-preparatorio-certificacao-aws)
-> 3. [Desenvolvimento de Jogos com Godot](https://web.dio.me/track/santander-2024-criando-jogos-com-godot) 
-> 4. [Fundamentos de IA Para Devs](https://web.dio.me/track/santander-2024-fundamentos-de-ia-para-devs) 
 
 ## Arquitetura do Projeto
 
