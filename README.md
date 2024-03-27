@@ -1,7 +1,54 @@
 # Santander Dev Week 2024
 
-RESTful API da Santander Dev Week 2024 construída em Java 21 com Spring Boot 3. Uma iniciativa fruto da parceria entre DIO e Santander para a divulgação dos Bootcamps Santander 2024.
-## Diagrama Arquitetural Simplificado
+## Sobre o Projeto
+
+Neste repositório, você encontrará o código-fonte de uma REST API e seu respectivo Frontend (pasta `/docs`), desenvolvidos durante a Santander Dev Week 2024, fruto de uma colaboração entre a DIO e o Santander. Este projeto, construído com Java 21 e Spring Boot 3, é o resultado de quatro dias de lives, com um propósito singular: 
+
+> [!NOTE]
+> Objetivo: "Permitir que os usuários conversem com os campeões do League of Legends (LOL)".
+
+Para isso, utilizamos algumas das mais recentes Inteligências Artificiais (IAs) Generativas, possibilitando que nossa API "entenda" a personalidade única de cada campeão para criar interações que capturam sua essência, tornando cada conversa uma experiência única.
+
+### Pré-Requisitos
+
+> [!TIP]
+> Caso queira reproduzir este projeto, você terá os seguintes pré-requisitos:
+> - Vontade de Aprender 😉
+> - Instalação da **[JDK 21](https://www.oracle.com/br/java/technologies/downloads/#java21)** (versão LTS do Java na data das lives);
+> - Instalação do **[IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download)** ou a IDE de sua preferência (Eclipse, VSCode etc);
+> - [Opcional] Conta na AWS (caso queira publicar a sua API REST na Nuvem usando o [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk);
+> - [Opcional] Conta na OpenAI e/ou Google para integração com os modelos [GPT](https://platform.openai.com/docs/api-reference/chat/create) e/ou [Gemini](https://ai.google.dev/tutorials/rest_quickstart#text-only_input) respectivamente.
+
+### Agenda das Lives
+
+- 25/03 às 19h | **Iniciando o seu Primeiro Projeto Java do Zero:** 
+Fundamentos da linguagem de programação Java e configurações de projetos Spring Boot. Foco em Programação Orientada a Objetos e sua relação com Bancos de Dados SQL através do Spring Data JDBC.
+
+- 26/03 às 19h | **Criando uma API com os Campeões do League of Legends:** 
+Criação de uma API REST, abordando design, desenvolvimento e documentação, com foco em campeões do League of Legends. Publicação da API no AWS Elastic Beanstalk.
+
+- 27/03 às 19h | **Potencializando sua API com Inteligência Artificial (IA):** 
+Incorporação de IA para otimizar a API, utilizando o Spring Cloud OpenFeign para integração com APIs de IA de grandes provedores, como OpenAI (GPT) e Google (Gemini).
+
+- 28/03 às 19h | **Conversando com os Campeões do LoL com HTML, CSS e JavaScript:** 
+Construção da interface do usuário, interatividade e integração com a API explorando os fundamentos de HTML, CSS e JavaScript.
+
+Mais detalhes disponíveis na [Landing Page Oficial da DIO com a Agenda das Lives da Santander Dev Week 2024](https://pages.dio.me/santander-dev-week-2024).
+ 
+## Como Participar dos Bootcamps Santander 2024
+
+> [!IMPORTANT] 
+> Ainda não garantiu a sua vaga? **Inscreva-se até 08/04/2024 nos [Bootcamps Santander 2024](https://bit.ly/48S4DCy)** para uma experiência educacional completa, explorando em detalhes os temas praticados durante a imersão da Santander Dev Week 2024. Nesse sentido, as opções de Bootcamps Santander disponíveis para matrícula na plataforma da DIO são:
+> 
+> 1. [Backend com Java e Spring Boot](https://web.dio.me/track/santander-2024-backend-com-java)
+> 2. [Certificação AWS Cloud Practitioner (CLF-C02)](https://web.dio.me/track/santander-2024-preparatorio-certificacao-aws)
+> 3. [Desenvolvimento de Jogos com Godot](https://web.dio.me/track/santander-2024-criando-jogos-com-godot) 
+> 4. [Fundamentos de IA Para Devs](https://web.dio.me/track/santander-2024-fundamentos-de-ia-para-devs) 
+
+## Arquitetura do Projeto
+
+### Diagrama Arquitetural
+A seguir, apresentamos o diagrama arquitetural do projeto (escrito com [Mermaid](https://mermaid.js.org/)), destacando a separação das responsabilidades entre as camadas. Desde a interface de usuário até os mecanismos de interação com sistemas externos, passando por adaptadores, casos de uso e as entidades centrais do domínio, cada elemento é estrategicamente posicionado para reforçar a modularidade, a escalabilidade e a manutenibilidade do sistema. Esta estrutura facilita a compreensão de como os componentes colaboram para a realização dos objetivos do software, alinhando-se aos princípios da [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) (inclusive nas cores dos elementos).
 
 ```mermaid
 graph RL;
@@ -34,23 +81,23 @@ class UC ucs;
 class Model,IPort entities;
 ```
 
-## Estrutura de Diretórios
+### Estrutura de Diretórios
 
-Sendo assim, a aplicação está organizada seguindo os princípios da [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html), com o objetivo de separar as responsabilidades de maneira clara e promover a independência das camadas. Abaixo está a estrutura de diretórios adotada:
+Refletindo a organização apresentada no diagrama arquitetural, a estrutura de diretórios do projeto sugere uma Clean Architecture simplificada, visando a uma clara separação das responsabilidades e promovendo a autonomia das camadas em um projeto Spring Boot. Esta abordagem estrutural não só facilita a manutenção e a evolução do código, mas também sustenta a integração e a colaboração eficaz entre as diferentes partes da aplicação. A seguir, detalhamos a disposição dos diretórios que compõem a aplicação, cada um desempenhando um papel específico dentro do ecossistema de software:
 
-- `adapters/` - Contém os adaptadores que interagem com mecanismos externos ou recebem requisições do usuário.
-  - `in/` - Adaptadores de entrada, como controladores REST, responsáveis por receber as requisições dos usuários.
-  - `out/` - Adaptadores de saída, para interação com bancos de dados e APIs externas.
-- `application/` - Define os casos de uso da aplicação, encapsulando a lógica de negócios.
-- `domain/` - O núcleo da aplicação, incluindo entidades, exceções e interfaces (portas) que definem as regras de negócio.
-  - `exception/` - Exceções personalizadas do domínio.
-  - `model/` - Modelos de entidades do domínio.
-  - `ports/` - Interfaces que definem os contratos para os adaptadores e serviços externos.
-- `Application.java` - Classe principal que inicia a aplicação.
+-   `adapters/`: Inclui os adaptadores que facilitam a comunicação entre a aplicação e o mundo externo (único diretório que "conhece" o Spring).
+    -   `in/`: Abriga os adaptadores de entrada, tais como controladores REST, que lidam com as requisições dos usuários.
+    -   `out/`: Contém os adaptadores de saída, responsáveis da interação com bancos de dados e APIs externas, por exemplo.
+-   `application/`: Hospeda os casos de uso da aplicação, encapsulando a lógica de negócios essencial.
+-   `domain/`: Representa o coração da aplicação, englobando entidades, exceções e interfaces (portas) que articulam as regras de negócio fundamentais.
+    -   `exception/`: Define as exceções personalizadas pertinentes ao domínio.
+    -   `model/`: Modela as entidades do domínio, refletindo os conceitos centrais da aplicação.
+    -   `ports/`: Estabelece as interfaces que delineiam os contratos para os adaptadores e serviços externos.
+-   `Application.java`: A classe principal que orquestra a configuração e o execução da aplicação.
 
-Esta estrutura promove a divisão das responsabilidades, facilitando a manutenção, testabilidade e a escalabilidade do sistema.
+### Banco de Dados SQL em Memória
 
-## Script Inicial do Banco de Dados SQL
+A utilização do banco de dados H2 neste projeto serve como uma fundação ágil e flexível para modelar nosso domínio de conhecimento — os campeões do LOL. Essa escolha permite uma rápida prototipação e um ambiente de desenvolvimento eficiente, essencial para armazenar e recuperar informações detalhadas sobre cada campeão. Dessa forma, garantimos que as IAs Generativas que integramos possam acessar um repositório rico e detalhado, permitindo-lhes capturar com precisão a essência e a personalidade única de cada campeão, enriquecendo assim a interatividade e a profundidade das interações realizadas.
 
 ```sql
 CREATE TABLE IF NOT EXISTS champions (
