@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: BootCamp-Santander-week-2024
+  datasource:
+    url: jdbc:h2:mem:sdw2024
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: 
+  h2:
+    console:
+      enabled: true
+openai:
+  base-url: https://api.openai.com
+  api-key: ${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}
